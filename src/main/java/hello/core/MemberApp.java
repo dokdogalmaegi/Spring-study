@@ -6,7 +6,8 @@ import hello.core.member.MemberServiceImpl;
 
 public class MemberApp {
     public static void main(String[] args) {
-        var memberService = new MemberServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        var memberService = appConfig.memberService();
         var member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
